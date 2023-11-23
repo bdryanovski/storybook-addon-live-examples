@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect, useRef, useMemo } from 'react';
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from 'react-live';
-import { Language } from 'prism-react-renderer';
-import defaultTheme from 'prism-react-renderer/themes/vsLight';
+import { Language, themes } from 'prism-react-renderer';
 import { styled } from '@storybook/theming';
 import { DisplayMIcon } from '@alfalab/icons-glyph/DisplayMIcon';
 import { MobilePhoneLineMIcon } from '@alfalab/icons-glyph/MobilePhoneLineMIcon';
@@ -370,7 +369,7 @@ export const Example: FC<ExampleProps & { example?: number }> = ({
             <LiveProvider
                 code={code || 'render(null)'}
                 noInline={detectNoInline(code)}
-                theme={config.editorTheme || defaultTheme}
+                theme={config.editorTheme || themes.github}
                 scope={{
                     ...config.scope,
                     ...scope,

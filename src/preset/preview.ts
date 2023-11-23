@@ -1,7 +1,7 @@
 import { CanvasAdapter, CodeAdapter } from '../components';
 import storyDecorator from '../story-decorator';
 
-export default {
+const config: any = {
     parameters: {
         docs: {
             components: {
@@ -12,3 +12,5 @@ export default {
     },
     decorators: [storyDecorator],
 };
+
+export default config;
